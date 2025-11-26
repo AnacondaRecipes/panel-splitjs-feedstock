@@ -1,6 +1,5 @@
 {% set name = "panel-splitjs" %}
 {% set version = "0.2.1" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -11,22 +10,22 @@ source:
   sha256: 84df543cf1a58d2691cc64f9c109ce0e874b20403deb3ab4c5dbf0d958e88f74
 
 build:
-  noarch: python
+  skip: True # [py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - hatchling
     - hatch-vcs
     - panel >=1.8.0
-    - nodejs >=22.*
-    - esbuild
+    - nodejs 24.*
+    - esbuild 0.25.4
     - packaging
     - pip
   run:
-    - python >={{ python_min }}
+    - python
     - panel >=1.8.0
     - bokeh >=3.8.0
     - packaging
@@ -37,16 +36,26 @@ test:
   commands:
     - pip check
   requires:
-    - python {{ python_min }}
     - pip
 
 about:
   home: https://github.com/panel-extensions/panel-splitjs
   summary: A responsive, draggable split panel component for Panel applications, powered by split.js.
+  description: |
+    A responsive, draggable split panel component for Panel applications, powered by split.js. Includes:
+    - Draggable dividers - Resize panels by dragging the divider between them
+    - Collapsible panels - Collapse individual panels with toggle buttons
+    - Flexible orientation - Support for both horizontal and vertical splits
+    - Size constraints - Enforce minimum and maximum panel sizes
+    - Snap behavior - Smart snapping to minimum sizes for better UX
+    - Customizable sizes - Control initial and expanded panel sizes
+    - Multi-panel support - Create layouts with 2+ panels using MultiSplit
   dev_url: https://github.com/panel-extensions/panel-splitjs
   license: BSD-3-Clause
   license_file: LICENSE.txt
-
+  license_family: BSD
+  dev_url: https://github.com/panel-extensions/panel-splitjs
+  doc_url: https://github.com/panel-extensions/panel-splitjs
 
 extra:
   recipe-maintainers:
