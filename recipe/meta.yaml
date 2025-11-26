@@ -43,15 +43,6 @@ test:
 about:
   home: https://github.com/panel-extensions/panel-splitjs
   summary: A responsive, draggable split panel component for Panel applications, powered by split.js.
-  description: |
-    A responsive, draggable split panel component for Panel applications, powered by split.js. Includes:
-    - Draggable dividers - Resize panels by dragging the divider between them
-    - Collapsible panels - Collapse individual panels with toggle buttons
-    - Flexible orientation - Support for both horizontal and vertical splits
-    - Size constraints - Enforce minimum and maximum panel sizes
-    - Snap behavior - Smart snapping to minimum sizes for better UX
-    - Customizable sizes - Control initial and expanded panel sizes
-    - Multi-panel support - Create layouts with 2+ panels using MultiSplit
   dev_url: https://github.com/panel-extensions/panel-splitjs
   license: BSD-3-Clause
   license_file: LICENSE.txt
