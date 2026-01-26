@@ -50,7 +50,6 @@ about:
     - Snap behavior - Smart snapping to minimum sizes for better UX
     - Customizable sizes - Control initial and expanded panel sizes
     - Multi-panel support - Create layouts with 2+ panels using MultiSplit
-  dev_url: https://github.com/panel-extensions/panel-splitjs
   license: BSD-3-Clause
   license_file: LICENSE.txt
   license_family: BSD
