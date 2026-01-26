@@ -22,7 +22,7 @@ requirements:
     - panel >=1.8.0
     - nodejs 24.*
     - esbuild 0.25.4
-    - packaging >= 20.0
+    - packaging >=20.0
     - pip
   run:
     - python
