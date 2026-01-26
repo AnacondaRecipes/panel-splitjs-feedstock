@@ -17,12 +17,12 @@ build:
 requirements:
   host:
     - python
-    - hatchling
-    - hatch-vcs
+    - hatchling >=1.25.0
+    - hatch-vcs >=0.4.0
     - panel >=1.8.0
     - nodejs 24.*
     - esbuild 0.25.4
-    - packaging
+    - packaging >= 20.0
     - pip
   run:
     - python
