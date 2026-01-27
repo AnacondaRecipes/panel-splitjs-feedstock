@@ -57,6 +57,8 @@ about:
   doc_url: https://github.com/panel-extensions/panel-splitjs
 
 extra:
+  skip-lints:
+    - host_section_needs_exact_pinnings
   recipe-maintainers:
     - maximlt
     - philippjfr
