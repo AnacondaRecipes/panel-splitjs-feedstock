@@ -31,12 +31,17 @@ requirements:
     - packaging
 
 test:
+  source_files:
+    - tests
   imports:
     - panel_splitjs
   commands:
     - pip check
+    - pytest -ra -vv --tb=short tests
   requires:
     - pip
+    - pytest
+    - pytest-asyncio
 
 about:
   home: https://github.com/panel-extensions/panel-splitjs
