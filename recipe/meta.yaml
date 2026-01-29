@@ -1,5 +1,5 @@
 {% set name = "panel-splitjs" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/panel_splitjs-{{ version }}.tar.gz
-  sha256: 84df543cf1a58d2691cc64f9c109ce0e874b20403deb3ab4c5dbf0d958e88f74
+  sha256: e5038f7cf37b12b72ef52ac44ff53fd8a72bd111a0ffe28afc1b9fac3450604a
 
 build:
   skip: True # [py<310]
@@ -31,12 +31,17 @@ requirements:
     - packaging
 
 test:
+  source_files:
+    - tests
   imports:
     - panel_splitjs
   commands:
     - pip check
+    - pytest -ra -vv --tb=short tests
   requires:
     - pip
+    - pytest
+    - pytest-asyncio
 
 about:
   home: https://github.com/panel-extensions/panel-splitjs
@@ -50,7 +55,6 @@ about:
     - Snap behavior - Smart snapping to minimum sizes for better UX
     - Customizable sizes - Control initial and expanded panel sizes
     - Multi-panel support - Create layouts with 2+ panels using MultiSplit
-  dev_url: https://github.com/panel-extensions/panel-splitjs
   license: BSD-3-Clause
   license_file: LICENSE.txt
   license_family: BSD
@@ -58,6 +62,8 @@ about:
   doc_url: https://github.com/panel-extensions/panel-splitjs
 
 extra:
+  skip-lints:
+    - host_section_needs_exact_pinnings
   recipe-maintainers:
     - maximlt
     - philippjfr
