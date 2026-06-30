@@ -1,13 +1,13 @@
 {% set name = "panel-splitjs" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/panel_splitjs-{{ version }}.tar.gz
-  sha256: e5038f7cf37b12b72ef52ac44ff53fd8a72bd111a0ffe28afc1b9fac3450604a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 2f9bd9a69079c248059f8f9b5c48ed2ffeecac2e58c41d8773c6a2f6e9cb960f
 
 build:
   skip: True # [py<310]
@@ -27,7 +27,6 @@ requirements:
   run:
     - python
     - panel >=1.8.0
-    - bokeh >=3.8.0
     - packaging
 
 test:
